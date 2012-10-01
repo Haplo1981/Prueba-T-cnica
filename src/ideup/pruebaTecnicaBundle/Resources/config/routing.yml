@@ -1,0 +1,7 @@
+ideupprueba_tecnica_homepage:
+    pattern:  /hello/{name}
+    defaults: { _controller: ideuppruebaTecnicaBundle:Hello:index }
+    
+vivienda_new:
+  pattern: /vivienda/new
+  defaults: {_controller: ideuppruebaTecnicaBundle:Default:new}

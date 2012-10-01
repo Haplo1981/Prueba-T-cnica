@@ -1,0 +1,56 @@
+{% extends '::base.html.twig' %}
+
+{% block body %}
+<form action="{{ path('vivienda_new') }}" method="post" {{ form_enctype(form) }}>
+    <table border='1' align='center' class='tabla'>
+        <tr><td colspan=2>{{ form_errors(form) }}</td></tr>
+        <tr>
+            <td class='etiqueta' width='10%'>
+                {{ form_label(form.descripcion_corta) }}
+            </td>
+            <td width='90%'>
+                {{ form_widget(form.descripcion_corta, {'attr': {'size' : '100','maxlength':'250'}}) }}
+                {{ form_errors(form.descripcion_corta) }}
+            </td>
+        </tr>
+        <tr>
+            <td class='etiqueta'>
+                {{ form_label(form.precio) }}
+            </td>
+            <td>
+                {{ form_widget(form.precio) }}
+                {{ form_errors(form.precio) }}
+            </td>
+        </tr>
+        <tr>
+            <td class='etiqueta'>
+                {{ form_label(form.direccion) }}
+            </td>
+            <td>
+                {{ form_widget(form.direccion,{'attr': {'size' : '100','maxlength':'250'}}) }}
+                {{ form_errors(form.direccion) }}
+            </td>
+        </tr>
+        <tr>
+            <td class='etiqueta'>
+                {{ form_label(form.descripcion) }}
+            </td>
+            <td>
+                {{ form_widget(form.descripcion,{'attr': {'cols' : '77','rows':'5'}}) }}
+                {{ form_errors(form.descripcion) }}
+            </td>
+        </tr>
+        <tr>
+            <td class='etiqueta'>
+                {{ form_label(form.imagenes) }}
+            </td>
+            <td>
+                {{ form_widget(form.imagenes) }}
+                {{ form_errors(form.imagenes) }}
+            </td>
+        </tr>
+        {{ form_rest(form) }}
+        <tr><td colspan=2 align='center'><input type="submit" /></td></tr>
+    </table>
+</form>
+{% endblock %}

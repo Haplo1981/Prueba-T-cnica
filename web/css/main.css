@@ -1,0 +1,25 @@
+/* 
+    Document   : main
+    Created on : 01-oct-2012, 13:33:53
+    Author     : Alberto Montoya
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+root { 
+    display: block;
+}
+
+.tabla{
+    border-collapse: collapse;
+    border-color: blue;
+    border-width: 1;
+    width: 70%;
+    font: 8pt serif Verdana;
+}
+
+.etiqueta{
+    text-align: right;
+    font-weight: bold;
+}
+
