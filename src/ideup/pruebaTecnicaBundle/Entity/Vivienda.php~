@@ -3,6 +3,7 @@
 namespace ideup\pruebaTecnicaBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\ArrayCollection; 
 
 /**
  * ideup\pruebaTecnicaBundle\Entity\Vivienda
@@ -38,7 +39,7 @@ class Vivienda
     
     /**
      *
-     * @ORM\Column(type="text")
+     * @ORM\Column(type="string", length=250)
      */
     protected $direccion;
     
@@ -48,109 +49,11 @@ class Vivienda
      */
     protected $imagenes;
     
-    public function __construct()
-    {
-        $this->imagenes = new ArrayCollection();
-    }
     /**
-     * Get id
-     *
-     * @return integer 
+     * @ORM\ManyToOne(targetEntity="Categorias", inversedBy="viviendas")
+     * @ORM\JoinColumn(name="categoria_id", referencedColumnName="id")
      */
-    public function getId()
-    {
-        return $this->id;
-    }
-
-    /**
-     * Set descripcion_corta
-     *
-     * @param string $descripcionCorta
-     * @return Vivienda
-     */
-    public function setDescripcionCorta($descripcionCorta)
-    {
-        $this->descripcion_corta = $descripcionCorta;
+    protected $categoria_id;
     
-        return $this;
-    }
-
-    /**
-     * Get descripcion_corta
-     *
-     * @return string 
-     */
-    public function getDescripcionCorta()
-    {
-        return $this->descripcion_corta;
-    }
-
-    /**
-     * Set precio
-     *
-     * @param float $precio
-     * @return Vivienda
-     */
-    public function setPrecio($precio)
-    {
-        $this->precio = $precio;
     
-        return $this;
-    }
-
-    /**
-     * Get precio
-     *
-     * @return float 
-     */
-    public function getPrecio()
-    {
-        return $this->precio;
-    }
-
-    /**
-     * Set descripcion
-     *
-     * @param string $descripcion
-     * @return Vivienda
-     */
-    public function setDescripcion($descripcion)
-    {
-        $this->descripcion = $descripcion;
-    
-        return $this;
-    }
-
-    /**
-     * Get descripcion
-     *
-     * @return string 
-     */
-    public function getDescripcion()
-    {
-        return $this->descripcion;
-    }
-
-    /**
-     * Set direccion
-     *
-     * @param string $direccion
-     * @return Vivienda
-     */
-    public function setDireccion($direccion)
-    {
-        $this->direccion = $direccion;
-    
-        return $this;
-    }
-
-    /**
-     * Get direccion
-     *
-     * @return string 
-     */
-    public function getDireccion()
-    {
-        return $this->direccion;
-    }
 }

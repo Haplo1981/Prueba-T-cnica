@@ -1,5 +1,5 @@
-ideupprueba_tecnica_homepage:
-    pattern:  /hello/{name}
+_homepage:
+    pattern:  /vivienda
     defaults: { _controller: ideuppruebaTecnicaBundle:Hello:index }
     
 vivienda_new:

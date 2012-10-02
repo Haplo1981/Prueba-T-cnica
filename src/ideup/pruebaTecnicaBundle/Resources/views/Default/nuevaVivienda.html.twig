@@ -6,6 +6,15 @@
         <tr><td colspan=2>{{ form_errors(form) }}</td></tr>
         <tr>
             <td class='etiqueta' width='10%'>
+                {{ form_label(form.categoria_id) }}
+            </td>
+            <td width='90%'>
+                {{ form_widget(form.categoria_id) }}
+                {{ form_errors(form.categoria_id) }}
+            </td>
+        </tr>
+        <tr>
+            <td class='etiqueta' width='10%'>
                 {{ form_label(form.descripcion_corta) }}
             </td>
             <td width='90%'>
@@ -38,15 +47,6 @@
             <td>
                 {{ form_widget(form.descripcion,{'attr': {'cols' : '77','rows':'5'}}) }}
                 {{ form_errors(form.descripcion) }}
-            </td>
-        </tr>
-        <tr>
-            <td class='etiqueta'>
-                {{ form_label(form.imagenes) }}
-            </td>
-            <td>
-                {{ form_widget(form.imagenes) }}
-                {{ form_errors(form.imagenes) }}
             </td>
         </tr>
         {{ form_rest(form) }}

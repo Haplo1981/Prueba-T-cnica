@@ -10,10 +10,7 @@
     <body>
         <div id="sidebar">
             {% block sidebar %}
-            <ul>
-                <li><a href="/">Inicio</a></li>
-                <li><a href="/app_dev.php/vivienda/new">Nueva vivienda</a></li>
-            </ul>
+            {{ knp_menu_render('main') }}
             {% endblock %}
         </div>
 

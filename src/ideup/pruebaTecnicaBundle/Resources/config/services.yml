@@ -2,6 +2,15 @@ parameters:
 #    ideupprueba_tecnica.example.class: ideup\pruebaTecnicaBundle\Example
 
 services:
-#    ideupprueba_tecnica.example:
-#        class: %ideupprueba_tecnica.example.class%
-#        arguments: [@service_id, "plain_value", %parameter%]
+    ideupprueba_tecnica.menu_builder:
+        class: ideup\pruebaTecnicaBundle\Menu\Builder
+        arguments: ["@knp_menu.factory"]
+
+    ideupprueba_tecnica.menu.main:
+        class: Knp\Menu\MenuItem
+        factory_service: ideupprueba_tecnica.menu_builder
+        factory_method: createMainMenu
+        arguments: ["@request"]
+        scope: request 
+        tags:
+            - { name: knp_menu.menu, alias: main } 

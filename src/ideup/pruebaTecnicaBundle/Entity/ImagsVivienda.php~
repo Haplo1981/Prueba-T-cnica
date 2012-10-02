@@ -89,4 +89,27 @@ class ImagsVivienda
     {
         return $this->alt;
     }
+
+    /**
+     * Set codVivienda
+     *
+     * @param ideup\pruebaTecnicaBundle\Entity\Vivienda $codVivienda
+     * @return ImagsVivienda
+     */
+    public function setCodVivienda(\ideup\pruebaTecnicaBundle\Entity\Vivienda $codVivienda = null)
+    {
+        $this->codVivienda = $codVivienda;
+    
+        return $this;
+    }
+
+    /**
+     * Get codVivienda
+     *
+     * @return ideup\pruebaTecnicaBundle\Entity\Vivienda 
+     */
+    public function getCodVivienda()
+    {
+        return $this->codVivienda;
+    }
 }

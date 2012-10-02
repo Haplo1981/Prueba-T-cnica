@@ -49,10 +49,21 @@ class Vivienda
      */
     protected $imagenes;
     
+    /**
+     * @ORM\ManyToOne(targetEntity="Categorias", inversedBy="viviendas")
+     * @ORM\JoinColumn(name="categoria_id", referencedColumnName="id")
+     */
+    protected $categoria_id;
+    
+    
+    /**
+     * Constructor
+     */
     public function __construct()
     {
-        $this->imagenes = new ArrayCollection();
+        $this->imagenes = new \Doctrine\Common\Collections\ArrayCollection();
     }
+    
     /**
      * Get id
      *
@@ -161,7 +172,7 @@ class Vivienda
      * @param ideup\pruebaTecnicaBundle\Entity\ImagsVivienda $imagenes
      * @return Vivienda
      */
-    public function addImagen(\ideup\pruebaTecnicaBundle\Entity\ImagsVivienda $imagenes)
+    public function addImagene(\ideup\pruebaTecnicaBundle\Entity\ImagsVivienda $imagenes)
     {
         $this->imagenes[] = $imagenes;
     
@@ -173,7 +184,7 @@ class Vivienda
      *
      * @param ideup\pruebaTecnicaBundle\Entity\ImagsVivienda $imagenes
      */
-    public function removeImagen(\ideup\pruebaTecnicaBundle\Entity\ImagsVivienda $imagenes)
+    public function removeImagene(\ideup\pruebaTecnicaBundle\Entity\ImagsVivienda $imagenes)
     {
         $this->imagenes->removeElement($imagenes);
     }
@@ -186,5 +197,28 @@ class Vivienda
     public function getImagenes()
     {
         return $this->imagenes;
+    }
+
+    /**
+     * Set categoria_id
+     *
+     * @param ideup\pruebaTecnicaBundle\Entity\Categorias $categoriaId
+     * @return Vivienda
+     */
+    public function setCategoriaId(\ideup\pruebaTecnicaBundle\Entity\Categorias $categoriaId = null)
+    {
+        $this->categoria_id = $categoriaId;
+    
+        return $this;
+    }
+
+    /**
+     * Get categoria_id
+     *
+     * @return ideup\pruebaTecnicaBundle\Entity\Categorias 
+     */
+    public function getCategoriaId()
+    {
+        return $this->categoria_id;
     }
 }
