@@ -7,7 +7,7 @@ use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * ideup\pruebaTecnicaBundle\Entity\Vivienda
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="ideup\pruebaTecnicaBundle\Entity\ViviendaRepository")
  * @ORM\Table(name="vivienda")
  */
 class Vivienda

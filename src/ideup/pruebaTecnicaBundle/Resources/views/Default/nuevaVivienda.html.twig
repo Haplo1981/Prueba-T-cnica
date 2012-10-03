@@ -1,7 +1,7 @@
 {% extends '::base.html.twig' %}
 
 {% block body %}
-<form action="{{ path('vivienda_new') }}" method="post" {{ form_enctype(form) }}>
+<form action="{{ vivienda.id?path('vivienda_update'):path('vivienda_new') }}" method="post" {{ form_enctype(form) }}>
     <table border='1' align='center' class='tabla'>
         <tr><td colspan=2>{{ form_errors(form) }}</td></tr>
         <tr>
@@ -50,7 +50,9 @@
             </td>
         </tr>
         {{ form_rest(form) }}
-        <tr><td colspan=2 align='center'><input type="submit" /></td></tr>
+        <tr><td colspan=2 align='center'><input type="submit" />
+                <a href="{{ path('_homepage')}}" >Volver</a>
+        </td></tr>
     </table>
 </form>
 {% endblock %}

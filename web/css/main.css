@@ -18,8 +18,40 @@ root {
     font: 8pt serif Verdana;
 }
 
+.textoTabla{
+    color:#000000;
+    font-family:Verdana;
+    font-size:8pt;
+    
+}
+
+.cabeceraTabla{
+    text-align: center;
+    color:#000000;
+    font-family:Verdana;
+    font-size:8pt;
+    font-weight: bold;
+}
+
 .etiqueta{
     text-align: right;
     font-weight: bold;
 }
 
+.cabecera{
+    font: 25pt serif;
+    font-weight: bold;
+    color: blue;
+    text-align: center; 
+}
+
+.first, .last {
+    background-color:  aqua;
+    color: #ffffff;
+    font-weight: bold;
+    
+}
+
+.current{
+    background-image:  url('/images/elementoMenuActual.jpg');
+}

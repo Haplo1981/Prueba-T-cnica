@@ -1,5 +1,42 @@
-<form action="{{ path('vivienda_new') }}" method="post" {{ form_enctype(form) }}>
-    {{ form_widget(form) }}
+{% extends '::base.html.twig' %}
 
-    <input type="submit" />
-</form>
+{% block body %}
+    <table class='tabla' align='center' border='1'>
+        <tr class='cabeceraTabla'>
+            <td width="15%">
+                Categoria
+            </td>
+            <td width="45%">
+                Descripción
+            </td>
+            <td width="10%">
+                Precio
+            </td>
+            <td width="25%">
+                Dirección
+            </td>
+            <td>
+            </td>
+        </tr>
+            
+        {% for vivienda in viviendas %}
+            <tr class='textoTabla'>
+                <td>
+                    {{vivienda.CategoriaId}}    
+                </td>
+                <td>
+                    {{vivienda.DescripcionCorta}}
+                </td>
+                <td>
+                    {{vivienda.precio}}€
+                </td>
+                <td>
+                    {{vivienda.direccion}}
+                </td>
+                <td>
+                    <a href='{{path('vivienda_show', {'idVivienda':vivienda.id})}}'><img src="/images/flecha.jpg" /></a>
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock %}

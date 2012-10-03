@@ -1,7 +1,15 @@
 _homepage:
     pattern:  /vivienda
-    defaults: { _controller: ideuppruebaTecnicaBundle:Hello:index }
+    defaults: { _controller: ideuppruebaTecnicaBundle:Default:index }
     
 vivienda_new:
   pattern: /vivienda/new
   defaults: {_controller: ideuppruebaTecnicaBundle:Default:new}
+  
+vivienda_show:
+  pattern: /vivienda/show/{idVivienda}
+  defaults: {_controller: ideuppruebaTecnicaBundle:Default:show}
+
+vivienda_update:
+  pattern: /vivienda/update
+  defaults: {_controller: ideuppruebaTecnicaBundle:Default:update}

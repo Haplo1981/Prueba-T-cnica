@@ -22,9 +22,9 @@ class Builder
 
         $menu->addChild('Inicio', array('route' => '_homepage'));
         $menu->addChild('Listado viviendas', array(
-            'route' => 'vivienda_new',
+            'route' => '_homepage',
         ));
-
+        $menu->addChild('Nueva vivienda', array('route'=>'vivienda_new'));
         return $menu;
     }
 }

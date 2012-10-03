@@ -12,4 +12,12 @@ use Doctrine\ORM\EntityRepository;
  */
 class ViviendaRepository extends EntityRepository
 {
+    
+    public function findAllOrderedByPrecio()
+    {
+        return $this->getEntityManager()
+            ->createQuery('SELECT v FROM ideuppruebaTecnicaBundle:Vivienda v ORDER BY v.precio ASC')
+            ->getResult();
+    }
+
 }
